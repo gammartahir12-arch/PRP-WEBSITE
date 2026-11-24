@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRP Admin</title><meta name="robots" content="noindex,nofollow"><link rel="icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body class="adm">
+<header class="hdr"><a class="brand" href="index.html"><span class="badge-logo"><img src="assets/logo.png" alt="PRP"></span><span class="bn"><b>PRP Admin</b><small>Private dashboard</small></span></a><button class="lang" id="out" hidden>Sign out</button></header>
+<main class="wrap" style="padding:1.5rem 1.2rem 4rem">
+<form id="login" class="form" style="max-width:420px;margin:3rem auto" hidden>
+ <h1 style="font-size:1.6rem;color:var(--g)">Administrator login</h1>
+ <div class="fg"><label for="em">Email</label><input id="em" type="email" autocomplete="username" required></div>
+ <div class="fg"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+ <button class="btn gold" type="submit">Sign in</button><div id="lm" class="st" role="alert"></div>
+</form>
+<div id="dash" hidden>
+ <div class="grid g4" id="stats"></div>
+ <h2 class="h2" style="margin-top:2rem">Department-wise (preferred)</h2><div id="bars" class="bars"></div>
+ <h2 class="h2" style="margin-top:2rem">Applications</h2>
+ <div class="tools"><input id="q" placeholder="Search name, email, city, ID…" aria-label="Search"><select id="fs" aria-label="Status"><option value="">All statuses</option><option>pending</option><option>approved</option><option>rejected</option></select><select id="fd" aria-label="Department"></select><button class="btn gold" id="csv">Export CSV / Excel</button></div>
+ <div class="tw"><table><thead><tr><th>ID</th><th>Name</th><th>City</th><th>Preferred dept.</th><th>Status</th><th>Assigned</th><th>Date</th></tr></thead><tbody id="tb"></tbody></table></div>
+ <p id="cnt" style="color:#44524a"></p>
+</div>
+</main>
+<dialog id="dlg"><form method="dialog" id="dform"></form></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script><script src="content.js"></script><script src="admin.js"></script>
+</body></html>
