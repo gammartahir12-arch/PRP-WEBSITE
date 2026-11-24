@@ -18,7 +18,7 @@ const whyCards=()=>`<div class="grid g4">${C.why.map(w=>`<article class="card"><
 const vm=()=>`<div class="grid g2"><article class="card big"><div class="ico">${ic('eye')}</div><h3>${L(U.vision)}</h3><p>${L(C.vision)}</p></article><article class="card big"><div class="ico">${ic('target')}</div><h3>${L(U.mission)}</h3><p>${L(C.mission)}</p></article></div>`;
 const cta=()=>`<section class="sec cta"><div class="wrap"><h2>${L(U.join)}</h2><p>${L(U.joinp)}</p>${btn('#/join',U.register)}</div></section>`;
 const R={
- home:()=>`<section class="hero"><div class="wrap hg"><div><p class="motto">${L(C.motto)}</p><h1>${L(C.name)}</h1><p class="ur2" lang="ur" dir="rtl">${C.name.ur}</p><p class="slogan" lang="ur" dir="rtl">${C.slogan.ur}</p><p class="lead">${L(C.intro)}</p><div class="acts">${btn('#/join',U.register)}${btn('#/manifesto',U.read,'ghost')}</div></div><div class="hl"><img src="assets/logo.png" alt="Pakistan Reform Party white dove emblem"></div></div></section>`
+ home:()=>`<section class="hero"><div class="wrap hg"><div><p class="motto">${L(C.motto)}</p><h1>${L(C.name)}</h1><p class="ur2" lang="ur" dir="rtl">${C.name.ur}</p><p class="slogan" lang="ur" dir="rtl">${C.slogan.ur}</p><p class="lead">${L(C.intro)}</p><div class="acts">${btn('#/join',U.register)}${btn('#/manifesto',U.read,'ghost')}</div></div><div class="hl"><img src="logo.png" alt="Pakistan Reform Party white dove emblem"></div></div></section>`
   +sec(U.vision,vm())+sec(U.tenpt,mCards(),'alt')+sec(U.why,founding(true)+whyCards())+cta(),
  about:()=>band(U.about,C.intro)+sec(null,`<div class="grid g2"><div>${founding(true)}</div>${vm()}</div>`)+cta(),
  why:()=>band(U.why)+sec(null,founding()+whyCards())+cta(),
@@ -39,7 +39,7 @@ function route(){let r=(location.hash.replace(/^#\/?/,'')||'home');if(!R[r])r='h
 function chrome(){document.documentElement.lang=lang;document.documentElement.dir=lang==='ur'?'rtl':'ltr';
  $('bn1').textContent=L(C.name);$('bn2').textContent=lang==='ur'?C.motto.ur:C.name.ur;$('lang').textContent=lang==='ur'?'English':'اردو';
  $('nav').innerHTML=C.nav.map(n=>`<a data-r="${n[0]}" href="#/${n[0]}" class="${n[0]==='join'?'jn':''}">${L(n[1])}</a>`).join('');
- $('ftr').innerHTML=`<div class="wrap fg3"><div><img src="assets/logo.png" alt="PRP emblem" class="fl"><h3>${L(C.name)}</h3><p class="motto">${L(C.motto)}</p><p lang="ur" dir="rtl" class="slogan2">${C.slogan.ur}</p></div><div><h4>${L(U.about)}</h4><div class="fn">${C.nav.map(n=>`<a href="#/${n[0]}">${L(n[1])}</a>`).join('')}</div></div></div><p class="rights">${L(U.rights)}</p>`}
+ $('ftr').innerHTML=`<div class="wrap fg3"><div><img src="logo.png" alt="PRP emblem" class="fl"><h3>${L(C.name)}</h3><p class="motto">${L(C.motto)}</p><p lang="ur" dir="rtl" class="slogan2">${C.slogan.ur}</p></div><div><h4>${L(U.about)}</h4><div class="fn">${C.nav.map(n=>`<a href="#/${n[0]}">${L(n[1])}</a>`).join('')}</div></div></div><p class="rights">${L(U.rights)}</p>`}
 const $=id=>document.getElementById(id);
 $('lang').onclick=()=>{lang=lang==='ur'?'en':'ur';localStorage.setItem('prp-lang',lang);chrome();route()};
 $('mb').onclick=()=>{const o=$('nav').classList.toggle('open');$('mb').setAttribute('aria-expanded',o)};
