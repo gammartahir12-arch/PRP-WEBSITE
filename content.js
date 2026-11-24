@@ -20,7 +20,7 @@ const C={
  "This is why Pakistan Reform Party exists.",
  "This is our beginning. This is our vision. This is our commitment to reform."
 ],ur:null}, // ur: add an array of Urdu paragraphs when the Urdu text is approved
- contact:{email:'[email to be added]',phone:'[phone to be added]',address:'[address to be added]'},
+ contact:{email:'gammartahir12@gmail.com',phone:'03297790373',address:'Lahore,Pakistan'},
  nav:[['home',B('Home','ہوم')],['about',B('About PRP','تعارف')],['why',B('Why PRP?','پی آر پی کیوں؟')],['vision',B('Vision & Mission','وژن اور مشن')],['manifesto',B('Manifesto','منشور')],['structure',B('Structure','تنظیمی ڈھانچہ')],['departments',B('Departments','شعبہ جات')],['heritage',B('Heritage','تاریخ و ورثہ')],['join',B('Join PRP','رکنیت')],['contact',B('Contact','رابطہ')]],
  manifesto:[
   {i:'shield-check',t:B('Corruption-Free Governance'),d:B('Establish transparent institutions, strengthen accountability and promote responsible governance.')},
